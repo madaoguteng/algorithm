@@ -18,6 +18,8 @@ public class SortCompare {
             new SelectionSort().sort(a);
         }else if (algName.equals("Insert")){
             new InsertSort().sort(a);
+        }else if (algName.equals("Shell")){
+            new ShellSort().sort(a);
         }
         return timer.elapsedTime();
     }
@@ -38,14 +40,17 @@ public class SortCompare {
     public static void main(String[] args){
         String alg1 = null;
         String alg2 = null;
+        String alg3 = null;
         int N = 0;
         int T = 0;
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("请输入第一个算法名称：[Selection/Insert]");
+            System.out.println("请输入第一个算法名称：[Selection/Insert/Shell]");
             alg1 = reader.readLine();
-            System.out.println("请输入第二个算法名称：[Selection/Insert]");
+            System.out.println("请输入第二个算法名称：[Selection/Insert/Shell]");
             alg2 = reader.readLine();
+            System.out.println("请输入第三个算法名称：[Selection/Insert/Shell]");
+            alg3 = reader.readLine();
             System.out.println("请输入待排序数组元素个数：");
             N = Integer.parseInt(reader.readLine());
             System.out.println("请输入本次测试需要排序多少组：");
@@ -55,8 +60,9 @@ public class SortCompare {
         }
         double timeOfAlg1 = timeRandomInput(alg1, N, T);
         double timeOfAlg2 = timeRandomInput(alg2, N, T);
+        double timeOfAlg3 = timeRandomInput(alg3, N, T);
         System.out.println("排序算法"+alg1+"对"+T+"组包含"+N+"个元素的数组排序花费的平均时间为："+timeOfAlg1/T+" 毫秒。");
         System.out.println("排序算法"+alg2+"对"+T+"组包含"+N+"个元素的数组排序花费的平均时间为："+timeOfAlg2/T+" 毫秒。");
-        System.out.println("排序算法"+alg1+"比排序算法"+alg2+"多花费的平均时间为："+(timeOfAlg1-timeOfAlg2)/T+" 毫秒。");
+        System.out.println("排序算法"+alg3+"对"+T+"组包含"+N+"个元素的数组排序花费的平均时间为："+timeOfAlg3/T+" 毫秒。");
     }
 }
