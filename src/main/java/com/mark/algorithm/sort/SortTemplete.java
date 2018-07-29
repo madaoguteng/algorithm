@@ -19,6 +19,15 @@ public class SortTemplete {
     protected static boolean less(Comparable a, Comparable b){
         return a.compareTo(b) < 0;
     };
+    /**
+     * a是否小于或等于b
+     * @param a
+     * @param b
+     * @return
+     */
+    protected static boolean lesseq(Comparable a, Comparable b){
+        return a.compareTo(b) < 0 || a.equals(b);
+    };
 
     protected static void exch(Comparable[] a, int i1, int i2){
         Comparable t = a[i1];

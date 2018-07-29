@@ -18,6 +18,20 @@ public class InsertSort extends SortTemplete {
         }
     }
 
+    public void sort(Comparable[] a, int start, int end){
+        int N = end - start;
+        int h = 1;
+        while (h < N/3) h = 3*h + 1;
+        while (h>=1){
+            for (int i = h; i < N; i++) {
+                for (int j = i; j >= h && less(a[j+start], a[j-h+start]); j -= h) {
+                    exch(a, j+start, j-h+start);
+                }
+            }
+            h = h/3;
+        }
+    }
+
     public static void main(String[] args){
         System.out.println("请输入需要排序的字符串，多个字符串用半角空格分割：");
         //j a v a i s e a s y
