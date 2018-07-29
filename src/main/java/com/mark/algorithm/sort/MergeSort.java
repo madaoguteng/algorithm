@@ -16,7 +16,7 @@ public class MergeSort extends SortTemplete {
     /**
      * 每段最大的数组元素数量
      */
-    private final int MAX_SEG_CAPACITY = 255;
+    private final int MAX_SEG_CAPACITY = 10;
 
     @Override
     public void sort(Comparable[] a){
