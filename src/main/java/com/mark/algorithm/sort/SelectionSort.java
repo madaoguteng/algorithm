@@ -25,6 +25,22 @@ public class SelectionSort extends SortTemplete {
         }
     }
 
+    public void sort(Comparable[] a, int lo, int hi){
+        if (a != null && hi>0){
+            for (int i = lo; i <= hi ; i++) {
+                int minIndex = i;
+                for (int j = i+1; j <= hi; j++) {
+                    if (less(a[j], a[minIndex])){
+                        minIndex = j;
+                    }
+                }
+                if (i != minIndex) {
+                    exch(a, i, minIndex);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args){
         System.out.println("请输入需要排序的字符串，多个字符串用半角空格分割：");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

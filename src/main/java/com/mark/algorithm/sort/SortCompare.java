@@ -20,6 +20,8 @@ public class SortCompare {
             new InsertSort().sort(a);
         }else if (algName.equals("Shell")){
             new ShellSort().sort(a);
+        }else if (algName.equals("Quick")){
+            new QuickSort().sort(a);
         }
         return timer.elapsedTime();
     }
@@ -45,11 +47,11 @@ public class SortCompare {
         int T = 0;
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("请输入第一个算法名称：[Selection/Insert/Shell]");
+            System.out.println("请输入第一个算法名称：[Selection/Insert/Shell/Quick]");
             alg1 = reader.readLine();
-            System.out.println("请输入第二个算法名称：[Selection/Insert/Shell]");
+            System.out.println("请输入第二个算法名称：[Selection/Insert/Shell/Quick]");
             alg2 = reader.readLine();
-            System.out.println("请输入第三个算法名称：[Selection/Insert/Shell]");
+            System.out.println("请输入第三个算法名称：[Selection/Insert/Shell/Quick]");
             alg3 = reader.readLine();
             System.out.println("请输入待排序数组元素个数：");
             N = Integer.parseInt(reader.readLine());
